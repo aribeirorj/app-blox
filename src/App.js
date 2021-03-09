@@ -1,9 +1,10 @@
-import GlobalStyle from './styles/globalStyles';
+import GlobalStyle from "./styles/globalStyles";
+import Main from "../src/pages/Main";
 function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>Foi</h1>;
+      <Main />
     </>
   );
 }
