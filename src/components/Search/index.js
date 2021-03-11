@@ -19,11 +19,6 @@ function Search() {
             </select>
           </Form>
         </Header>
-        <Footer>
-          <FaThLarge color="#000000" size={15} />
-          <FaList color="#b6b6b6" size={15} />
-          <FaColumns color="#b6b6b6" size={15} />
-        </Footer>
       </Wrapper>
     </Container>
   );

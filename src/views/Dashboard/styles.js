@@ -17,3 +17,11 @@ export const Form = styled.div`
   justify-content: space-around;
   padding: 20px;
 `;
+
+export const Footer = styled.div`
+  display: flex;
+  width: 60px;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+`;

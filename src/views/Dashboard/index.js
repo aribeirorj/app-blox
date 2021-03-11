@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../components/Card";
-import { Container, Wrapper, Form } from "./styles";
+import { Container, Wrapper, Form, Footer } from "./styles";
 import Button from "../../components/Button";
+import { FaSearch, FaThLarge, FaList, FaColumns } from "react-icons/fa";
 
 function Dashboard() {
   const [notifications, setNotifications] = useState([]);
@@ -25,6 +26,12 @@ function Dashboard() {
   return (
     <Container>
       <Wrapper>
+        <Footer>
+          <FaThLarge color="#000000" size={15} />
+          <FaList color="#b6b6b6" size={15} />
+          <FaColumns color="#b6b6b6" size={15} />
+        </Footer>
+        <Card />
         <Card />
         <Form>
           <Button />
