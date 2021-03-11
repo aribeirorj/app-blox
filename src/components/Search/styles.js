@@ -8,6 +8,12 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 95%;
+`;
+
+export const Header = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 95%;
@@ -15,10 +21,19 @@ export const Wrapper = styled.div`
   border: none;
   border-bottom: 1px solid #c3c3c3;
   align-items: baseline;
+
   h3 {
     color: #000000;
     font-weight: bold;
   }
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  width: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-block-start: 5px;
 `;
 
 export const Form = styled.div`

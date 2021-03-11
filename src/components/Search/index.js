@@ -1,15 +1,15 @@
 import React from "react";
-import { Container, Form, Wrapper } from "./styles";
-import { FaSearch } from "react-icons/fa";
+import { Container, Form, Wrapper, Header, Footer } from "./styles";
+import { FaSearch, FaThLarge, FaList, FaColumns } from "react-icons/fa";
 
 function Search() {
   return (
     <Container>
       <Wrapper>
-        <h3>Arquivados</h3>
-        <div>
+        <Header>
+          <h3>Arquivados</h3>
           <Form onSubmit={() => {}}>
-            <input type="text" placeholder="Título ou ID" />;
+            <input type="text" placeholder="Título ou ID" />
             <FaSearch color="#6991fc" />
             <select name="cars" id="cars">
               <option value="volvo">Filtrar</option>
@@ -18,7 +18,12 @@ function Search() {
               <option value="audi">Teste3</option>
             </select>
           </Form>
-        </div>
+        </Header>
+        <Footer>
+          <FaThLarge color="#000000" size={15} />
+          <FaList color="#b6b6b6" size={15} />
+          <FaColumns color="#b6b6b6" size={15} />
+        </Footer>
       </Wrapper>
     </Container>
   );
