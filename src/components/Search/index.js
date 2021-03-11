@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Form, Wrapper, Header, Footer } from "./styles";
-import { FaSearch, FaThLarge, FaList, FaColumns } from "react-icons/fa";
+import { Container, Form, Wrapper, Header } from "./styles";
+import { FaSearch } from "react-icons/fa";
 
 function Search() {
   return (

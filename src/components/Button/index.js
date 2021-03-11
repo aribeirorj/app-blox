@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "./styles";
 
-function Button() {
-  return <Container onClick={() => console.log("foi")}>PRÓXIMO</Container>;
+function Button({ label }) {
+  return <Container onClick={() => console.log("foi")}>{label}</Container>;
 }
 
 export default Button;
