@@ -1,5 +1,4 @@
 import React from "react";
-// import { FaGithubAlt } from "react-icons/fa";
 import { Container } from "./styles";
 import Header from "../../components/Header";
 import Search from "../../components/Search";

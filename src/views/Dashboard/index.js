@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../components/Card";
-import { Container, Wrapper } from "./styles";
+import { Container, Wrapper, Form } from "./styles";
+import Button from "../../components/Button";
 
 function Dashboard() {
   const [notifications, setNotifications] = useState([]);
@@ -25,6 +26,10 @@ function Dashboard() {
     <Container>
       <Wrapper>
         <Card />
+        <Form>
+          <Button />
+          <Button />
+        </Form>
       </Wrapper>
     </Container>
   );
