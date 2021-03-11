@@ -1,11 +1,12 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
   body {
     margin: 0;
     padding: 0;
-    outline: 0;        
+    outline: 0;
     box-sizing: border-box
   }
 
@@ -17,13 +18,16 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  body {    
+  body {
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button {
+  body, button {
     font: 14px 'Roboto', sans-serif;
+    color: #ffffff;
   }
+
+
 
   a {
     text-decoration: none;
@@ -31,8 +35,8 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    color: #c3c3c3;
   }
-
 
 `;
 

@@ -1,14 +1,15 @@
 import React from "react";
-import { Container } from "./styles";
-import { Card } from "../../components/Card";
+import Card from "../../components/Card";
+import { Container, Wrapper } from "./styles";
 
-class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <Container>Dashboard</Container>;
-  }
+function Dashboard() {
+  return (
+    <Container>
+      <Wrapper>
+        <Card />
+      </Wrapper>
+    </Container>
+  );
 }
 
 export default Dashboard;
