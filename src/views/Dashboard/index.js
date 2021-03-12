@@ -1,23 +1,27 @@
 import React, { useEffect } from "react";
 import Card from "../../components/Card";
-import { Container, Wrapper, Form, Footer } from "./styles";
+import { Container, Form, Footer } from "./styles";
 import Button from "../../components/Button";
 import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
 import { connect } from "react-redux";
-import { setCourseUnit } from "../../actions/";
-import api from "../../services/api";
+import { setCourseUnit } from "../Dashboard/dashBoardAction";
+import { getService } from "../../services/api.js";
 import { useDispatch } from "react-redux";
+import Loading from "../../components/Loading";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const data = api
-      .get("airlines")
-      .then((resp) => {
-        return resp.data;
-      })
-      .then((data) => dispatch(setCourseUnit(data.slice(0, 6))));
+    async function loadData() {
+      try {
+        const { data } = await getService("airlines");
+        dispatch(setCourseUnit(data.slice(0, 6)));
+      } catch (error) {
+        alert("Ocorreu um erro ao buscar os items");
+      }
+    }
+    loadData();
   });
 
   const { courseUnit = [] } = props;
@@ -29,7 +33,7 @@ function Dashboard(props) {
         <FaList color="#b6b6b6" size={15} />
         <FaColumns color="#b6b6b6" size={15} />
       </Footer>
-      <Card data={courseUnit} />
+      {courseUnit.length > 0 ? <Card data={courseUnit} /> : <Loading />}
       <Form>
         <Button label="ANTERIOR" />
         <Button label="PRÓXIMO" />

@@ -32,13 +32,13 @@ export const Form = styled.div`
   select,
   input {
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     color: #585858;
     width: 350px;
   }
 `;
 
 export const Input = styled.div`
-  border-bottom: 1px solid #585858;
+  border-bottom: 1px solid #c3c3c3;
   margin-left: 10px;
 `;

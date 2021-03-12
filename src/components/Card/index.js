@@ -17,8 +17,6 @@ import {
 import LogoBlox from "../../assets/images/logoBlox.png";
 
 function Card({ data }) {
-  debugger;
-
   const listCard = data.map((item, index) => (
     <Container key={index}>
       <Wrapper>
@@ -39,9 +37,7 @@ function Card({ data }) {
             <Logo>
               <img src={LogoBlox} alt="logo" height={20} loading="eager" />
             </Logo>
-            <Description>
-              <p>{item.slogan}</p>
-            </Description>
+            <Description>{item.slogan}</Description>
           </SectionTitle>
           <SectionDetails>
             <div>

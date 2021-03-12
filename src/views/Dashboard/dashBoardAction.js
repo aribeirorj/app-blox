@@ -1,4 +1,4 @@
-import { SET_DATA } from "./actionTypes";
+import { SET_DATA } from "../../redux/actionTypes/actionTypes";
 
 export function setCourseUnit(data) {
   return {
