@@ -2,26 +2,24 @@ import React, { useState, useEffect } from "react";
 import Card from "../../components/Card";
 import { Container, Wrapper, Form, Footer } from "./styles";
 import Button from "../../components/Button";
-import { FaSearch, FaThLarge, FaList, FaColumns } from "react-icons/fa";
+import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
+import { connect } from "react-redux";
+import { getCourseUnit } from "../../actions/";
 
-function Dashboard() {
-  const [notifications, setNotifications] = useState([]);
+function Dashboard(props) {
+  // const [notifications, setNotifications] = useState([]);
 
-  // useEffect(() => {
-  //   async function loadNotifications() {
-  //     const response = await api.get('notifications');
+  useEffect(() => {
+    debugger;
+    props.getCourseUnit();
+    // getCourseUnit();
+    // async function loadCourseUnit() {
+    //   debugger;
+    //   await getCourseUnit();
+    // }
+  });
 
-  //     // const data = response.data.map(notification => ({
-  //     //   ...notification,
-  //     //   timeDistance: formatDistance(
-  //     //     parseISO(notification.createdAt),
-  //     //     new Date(),
-  //     //     { addSuffix: true, locale: pt }
-  //     //   ),
-  //     // }));
-
-  //     // setNotifications(data);
-  //   }
+  const { courseUnit } = props;
 
   return (
     <Container>
@@ -34,12 +32,22 @@ function Dashboard() {
         <Card />
         <Card />
         <Form>
-          <Button />
-          <Button />
+          <Button label="ANTERIOR" />
+          <Button label="PRÓXIMO" />
         </Form>
       </Wrapper>
     </Container>
   );
 }
 
-export default Dashboard;
+const mapStateToProps = function (state) {
+  return {
+    courseUnit: state.courseState.courseUnit,
+  };
+};
+
+const mapDispatchToProps = {
+  getCourseUnit: getCourseUnit,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
