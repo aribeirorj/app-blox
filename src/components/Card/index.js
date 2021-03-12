@@ -15,20 +15,21 @@ import {
   Avatar,
 } from "./styles";
 import LogoBlox from "../../assets/images/logoBlox.png";
-import uuid from "node-uuid";
 
 function Card({ data }) {
+  debugger;
+
   const listCard = data.map((item, index) => (
     <Container key={index}>
       <Wrapper>
         <Header>
           <div>
-            <Title>{item.name}</Title>
-            <Description>{item.stablished}</Description>
+            <Title>Data</Title>
+            <Description>{item.name}</Description>
           </div>
-          <div key={uuid()}>
-            <FaSpinner size={22} key={uuid()} />
-            <FaEllipsisV size={22} key={uuid()} />
+          <div>
+            <FaSpinner size={22} />
+            <FaEllipsisV size={22} />
           </div>
         </Header>
       </Wrapper>
@@ -43,11 +44,11 @@ function Card({ data }) {
             </Description>
           </SectionTitle>
           <SectionDetails>
-            <div key={uuid()}>
+            <div>
               <Title>ID</Title>
               <Description>{item.id}</Description>
             </div>
-            <div key={uuid()}>
+            <div>
               <Title>Modalidade</Title>
               <Description>{item.country}</Description>
             </div>
@@ -55,7 +56,7 @@ function Card({ data }) {
         </Wrapper>
       </Body>
       <Wrapper>
-        <Avatar key={uuid()}>JM</Avatar>
+        <Avatar>JM</Avatar>
       </Wrapper>
     </Container>
   ));

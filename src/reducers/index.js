@@ -1,4 +1,4 @@
-import { courseReducer } from "./courseReducers";
+import courseReducer from "./courseReducer";
 import { combineReducers } from "redux";
 
 export const Reducers = combineReducers({
