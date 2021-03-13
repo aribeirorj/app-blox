@@ -14,12 +14,8 @@ function Dashboard(props) {
 
   useEffect(() => {
     async function loadData() {
-      try {
-        const { data } = await getService("airlines");
-        dispatch(setCourseUnit(data.slice(0, 6)));
-      } catch (error) {
-        alert("Erro ao carregar os dados");
-      }
+      const { data } = await getService("airlines");
+      dispatch(setCourseUnit(data.slice(0, 6)));
     }
     loadData();
   });
