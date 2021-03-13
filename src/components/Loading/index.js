@@ -13,7 +13,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -21,7 +21,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -29,7 +29,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -38,7 +38,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -46,7 +46,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -54,7 +54,7 @@ function Loading() {
       <div
         style={{
           height: "170px",
-          width: "390px",
+          width: "370px",
           borderRadius: "10px",
           padding: "5px",
         }}
