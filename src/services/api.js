@@ -5,5 +5,9 @@ export const api = axios.create({
 });
 
 export async function getService(param) {
-  return await api.get(param);
+  try {
+    return await api.get(param);
+  } catch (error) {
+    alert("Erro ao carregar os dados");
+  }
 }
