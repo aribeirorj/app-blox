@@ -1,7 +1,6 @@
 import React from "react";
 import { FaPencilAlt, FaEye, FaCheck, FaFolder } from "react-icons/fa";
-
-import { Container, Card, Icon, Section } from "./styles";
+import { Container, Card, Icon } from "./styles";
 
 function Footer() {
   return (

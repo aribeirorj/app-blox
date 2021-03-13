@@ -3,10 +3,33 @@ import StyledContentLoader from "styled-content-loader";
 
 function Loading() {
   return (
-    <StyledContentLoader>
-      <div style={{ height: "100px" }} />
-      <p>Carregando..</p>
-      <div style={{ height: "120px" }} />
+    <StyledContentLoader
+      style={{ display: "flex", justifyContent: "space-Between" }}
+    >
+      <div
+        style={{
+          height: "190px",
+          width: "370px",
+          borderRadius: "10px",
+          padding: "10px",
+        }}
+      />
+      <div
+        style={{
+          height: "190px",
+          width: "370px",
+          borderRadius: "10px",
+          padding: "10px",
+        }}
+      />
+      <div
+        style={{
+          height: "190px",
+          width: "370px",
+          borderRadius: "10px",
+          padding: "10px",
+        }}
+      />
     </StyledContentLoader>
   );
 }

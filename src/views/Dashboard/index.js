@@ -18,7 +18,7 @@ function Dashboard(props) {
         const { data } = await getService("airlines");
         dispatch(setCourseUnit(data.slice(0, 6)));
       } catch (error) {
-        alert("Ocorreu um erro ao buscar os items");
+        alert("Erro ao carregar os dados");
       }
     }
     loadData();
