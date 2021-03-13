@@ -4,13 +4,17 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+
   }
 
-  body {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box
+  *{
+    body {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      box-sizing: border-box
+    }
   }
 
   *:focus {
