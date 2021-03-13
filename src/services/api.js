@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://api-dev.plataformablox.com.br/api",
+export const api = axios.create({
+  baseURL: "https://api.instantwebtools.net/v1/",
 });
 
-export default api;
+export async function getService(param) {
+  return await api.get(param);
+}

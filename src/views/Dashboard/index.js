@@ -1,45 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Card from "../../components/Card";
-import { Container, Wrapper, Form, Footer } from "./styles";
+import { Container, Form, Footer } from "./styles";
 import Button from "../../components/Button";
-import { FaSearch, FaThLarge, FaList, FaColumns } from "react-icons/fa";
+import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
+import { connect } from "react-redux";
+import { setCourseUnit } from "../Dashboard/dashBoardAction";
+import { getService } from "../../services/api.js";
+import { useDispatch } from "react-redux";
+import Loading from "../../components/Loading";
 
-function Dashboard() {
-  const [notifications, setNotifications] = useState([]);
+function Dashboard(props) {
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   async function loadNotifications() {
-  //     const response = await api.get('notifications');
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const { data } = await getService("airlines");
+        dispatch(setCourseUnit(data.slice(0, 6)));
+      } catch (error) {
+        alert("Erro ao carregar os dados");
+      }
+    }
+    loadData();
+  });
 
-  //     // const data = response.data.map(notification => ({
-  //     //   ...notification,
-  //     //   timeDistance: formatDistance(
-  //     //     parseISO(notification.createdAt),
-  //     //     new Date(),
-  //     //     { addSuffix: true, locale: pt }
-  //     //   ),
-  //     // }));
-
-  //     // setNotifications(data);
-  //   }
+  const { courseUnit = [] } = props;
 
   return (
     <Container>
-      <Wrapper>
-        <Footer>
-          <FaThLarge color="#000000" size={15} />
-          <FaList color="#b6b6b6" size={15} />
-          <FaColumns color="#b6b6b6" size={15} />
-        </Footer>
-        <Card />
-        <Card />
-        <Form>
-          <Button />
-          <Button />
-        </Form>
-      </Wrapper>
+      <Footer>
+        <FaThLarge color="#000000" size={15} />
+        <FaList color="#b6b6b6" size={15} />
+        <FaColumns color="#b6b6b6" size={15} />
+      </Footer>
+      {courseUnit.length > 0 ? <Card data={courseUnit} /> : <Loading />}
+      <Form>
+        <Button label="ANTERIOR" />
+        <Button label="PRÓXIMO" />
+      </Form>
     </Container>
   );
 }
 
-export default Dashboard;
+const mapStateToProps = function (state) {
+  return {
+    courseUnit: state.courseState.courseUnit,
+  };
+};
+
+const mapDispatchToProps = {
+  setCourseUnit: setCourseUnit,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

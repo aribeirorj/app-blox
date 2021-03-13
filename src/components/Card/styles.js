@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: #75c2e2;
   border-radius: 10px;
-  max-width: 450px;
+  box-shadow: 3px 3px 1px 0px #a7a7a7;
 `;
 
 export const Wrapper = styled.div`
@@ -20,11 +20,15 @@ export const Body = styled.div`
   background-color: #69addb;
 `;
 
-export const Footer = styled.div``;
+export const Main = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 2fr));
+  grid-gap: 1rem;
+`;
 
 export const SectionTitle = styled.div`
   display: flex;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   font-weight: bold;
 `;
 

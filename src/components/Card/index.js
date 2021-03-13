@@ -6,7 +6,7 @@ import {
   Wrapper,
   Header,
   Body,
-  Footer,
+  Main,
   SectionTitle,
   SectionDetails,
   Title,
@@ -16,14 +16,14 @@ import {
 } from "./styles";
 import LogoBlox from "../../assets/images/logoBlox.png";
 
-function Card() {
-  return (
-    <Container>
+function Card({ data }) {
+  const listCard = data.map((item, index) => (
+    <Container key={index}>
       <Wrapper>
         <Header>
           <div>
-            <Title>Data Limite</Title>
-            <Description>01/01/20202</Description>
+            <Title>Data</Title>
+            <Description>{item.name}</Description>
           </div>
           <div>
             <FaSpinner size={22} />
@@ -35,31 +35,29 @@ function Card() {
         <Wrapper>
           <SectionTitle>
             <Logo>
-              <img src={LogoBlox} alt="logo" height={40} />
+              <img src={LogoBlox} alt="logo" height={20} loading="eager" />
             </Logo>
-            <Description>
-              <p>Competencias da Lideranca Motivacional</p>
-            </Description>
+            <Description>{item.slogan}</Description>
           </SectionTitle>
           <SectionDetails>
             <div>
               <Title>ID</Title>
-              <Description>2174</Description>
+              <Description>{item.id}</Description>
             </div>
             <div>
               <Title>Modalidade</Title>
-              <Description>EAD</Description>
+              <Description>{item.country}</Description>
             </div>
           </SectionDetails>
         </Wrapper>
       </Body>
       <Wrapper>
-        <Footer>
-          <Avatar>JM</Avatar>
-        </Footer>
+        <Avatar>JM</Avatar>
       </Wrapper>
     </Container>
-  );
+  ));
+
+  return <Main>{listCard}</Main>;
 }
 
 export default Card;
