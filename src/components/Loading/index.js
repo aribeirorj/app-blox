@@ -4,30 +4,59 @@ import StyledContentLoader from "styled-content-loader";
 function Loading() {
   return (
     <StyledContentLoader
-      style={{ display: "flex", justifyContent: "space-Between" }}
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(380px, 2fr))",
+        gridGap: "1rem",
+      }}
     >
       <div
         style={{
-          height: "190px",
-          width: "370px",
+          height: "170px",
+          width: "390px",
           borderRadius: "10px",
-          padding: "10px",
+          padding: "5px",
         }}
       />
       <div
         style={{
-          height: "190px",
-          width: "370px",
+          height: "170px",
+          width: "390px",
           borderRadius: "10px",
-          padding: "10px",
+          padding: "5px",
         }}
       />
       <div
         style={{
-          height: "190px",
-          width: "370px",
+          height: "170px",
+          width: "390px",
           borderRadius: "10px",
-          padding: "10px",
+          padding: "5px",
+        }}
+      />
+
+      <div
+        style={{
+          height: "170px",
+          width: "390px",
+          borderRadius: "10px",
+          padding: "5px",
+        }}
+      />
+      <div
+        style={{
+          height: "170px",
+          width: "390px",
+          borderRadius: "10px",
+          padding: "5px",
+        }}
+      />
+      <div
+        style={{
+          height: "170px",
+          width: "390px",
+          borderRadius: "10px",
+          padding: "5px",
         }}
       />
     </StyledContentLoader>

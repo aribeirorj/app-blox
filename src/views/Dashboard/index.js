@@ -15,7 +15,7 @@ function Dashboard(props) {
   useEffect(() => {
     async function loadData() {
       const { data } = await getService("airlines");
-      dispatch(setCourseUnit(data.slice(0, 6)));
+      data && dispatch(setCourseUnit(data.slice(0, 6)));
     }
     loadData();
   });
