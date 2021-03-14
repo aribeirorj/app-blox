@@ -1,8 +1,7 @@
 import React from "react";
 import { Container } from "./styles";
-import Header from "../../components/Header";
 import DashBoard from "./../Dashboard";
-import Footer from "../../components/Footer";
+import { Header, Footer } from "../../components";
 
 function Main() {
   return (
