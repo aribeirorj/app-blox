@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
-import Card from "../../components/Card";
 import { Container, Form, Footer } from "./styles";
-import Button from "../../components/Button";
 import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
 import { connect } from "react-redux";
 import { setCourseUnit } from "../Dashboard/dashBoardAction";
 import { getService } from "../../services/api.js";
 import { useDispatch } from "react-redux";
-import Loading from "../../components/Loading";
+import { Card, Button, Loading } from "./../../components";
+import { filterData } from "../../useCase/filterData";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function loadData() {
-      const { data } = await getService("airlines");
-      data && dispatch(setCourseUnit(data.slice(0, 6)));
+      let dataFiltered = null;
+
+      const { data = [] } = await getService("airlines");
+      dataFiltered = filterData(data);
+      dispatch(setCourseUnit(dataFiltered));
     }
     loadData();
   });
