@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Container, Form, Footer } from "./styles";
+import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
 import { connect } from "react-redux";
+import { setCourseUnit } from "../Dashboard/dashBoardAction";
+import { getService } from "../../services/api.js";
 import { useDispatch } from "react-redux";
 import { Card, Button, Loading } from "./../../components";
-import { getService } from "../../services/api.js";
 import { filterData } from "../../useCase/filterData";
-import { setCourseUnit } from "../Dashboard/dashBoardAction";
-import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function Dashboard(props) {
       dispatch(setCourseUnit(dataFiltered));
     }
     loadData();
-  }, []);
+  });
 
   const { courseUnit = [] } = props;
 
