@@ -13,7 +13,6 @@ function Loading() {
       <div
         style={{
           height: "200px",
-          width: "480px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -21,7 +20,6 @@ function Loading() {
       <div
         style={{
           height: "200px",
-          width: "480px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -29,7 +27,6 @@ function Loading() {
       <div
         style={{
           height: "200px",
-          width: "480px",
           borderRadius: "10px",
           padding: "5px",
         }}
@@ -37,7 +34,6 @@ function Loading() {
       <div
         style={{
           height: "200px",
-          width: "480px",
           borderRadius: "10px",
           padding: "5px",
         }}
