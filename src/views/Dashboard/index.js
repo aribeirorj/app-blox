@@ -1,26 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Container, Form, Footer } from "./styles";
 import { FaThLarge, FaList, FaColumns } from "react-icons/fa";
 import { connect } from "react-redux";
 import { setCourseUnit } from "../Dashboard/dashBoardAction";
 import { getService } from "../../services/api.js";
+import { filterData } from "../../useCase/filterData";
 import { useDispatch } from "react-redux";
 import { Card, Button, Loading } from "./../../components";
-import { filterData } from "../../useCase/filterData";
 
 function Dashboard(props) {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function loadData() {
-      let dataFiltered = null;
+  const dispatchData = useCallback(
+    (param) => {
+      dispatch(setCourseUnit(param));
+    },
+    [dispatch]
+  );
 
-      const { data = [] } = await getService("airlines");
-      dataFiltered = filterData(data);
-      dispatch(setCourseUnit(dataFiltered));
-    }
-    loadData();
-  });
+  const filteredData = useCallback(
+    (param) => {
+      let response = filterData(param);
+      dispatchData(response);
+    },
+    [dispatchData]
+  );
+
+  const loadData = useCallback(
+    async (param) => {
+      const { data } = await getService(param);
+      filteredData(data);
+    },
+    [filteredData]
+  );
+
+  useEffect(() => {
+    loadData("airlines");
+  }, [loadData]);
 
   const { courseUnit = [] } = props;
 
