@@ -38,6 +38,20 @@ function Loading() {
           padding: "5px",
         }}
       />
+      <div
+        style={{
+          height: "200px",
+          borderRadius: "10px",
+          padding: "5px",
+        }}
+      />
+      <div
+        style={{
+          height: "200px",
+          borderRadius: "10px",
+          padding: "5px",
+        }}
+      />
     </StyledContentLoader>
   );
 }
