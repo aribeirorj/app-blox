@@ -12,49 +12,32 @@ function Loading() {
     >
       <div
         style={{
-          height: "100px",
-          width: "370px",
+          height: "200px",
+          width: "500px",
           borderRadius: "10px",
           padding: "5px",
         }}
       />
       <div
         style={{
-          height: "100px",
-          width: "370px",
+          height: "200px",
+          width: "500px",
           borderRadius: "10px",
           padding: "5px",
         }}
       />
       <div
         style={{
-          height: "100px",
-          width: "370px",
-          borderRadius: "10px",
-          padding: "5px",
-        }}
-      />
-
-      <div
-        style={{
-          height: "100px",
-          width: "370px",
+          height: "200px",
+          width: "500px",
           borderRadius: "10px",
           padding: "5px",
         }}
       />
       <div
         style={{
-          height: "100px",
-          width: "370px",
-          borderRadius: "10px",
-          padding: "5px",
-        }}
-      />
-      <div
-        style={{
-          height: "100px",
-          width: "370px",
+          height: "200px",
+          width: "500px",
           borderRadius: "10px",
           padding: "5px",
         }}
